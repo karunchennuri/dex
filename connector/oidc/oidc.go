@@ -54,6 +54,9 @@ type Config struct {
 
 	// Configurable key which contains the user name claim
 	UserNameKey string `json:"userNameKey"`
+
+	// Configurable key which contains the username claims
+	PreferredUsernameKey string `json:"preferredUsernameKey"` // defaults to "username"
 }
 
 // Domains that don't support basic auth. golang.org/x/oauth2 has an internal
@@ -135,6 +138,7 @@ func (c *Config) Open(id string, logger log.Logger) (conn connector.Connector, e
 		getUserInfo:               c.GetUserInfo,
 		userIDKey:                 c.UserIDKey,
 		userNameKey:               c.UserNameKey,
+		preferredUsernameKey:      c.PreferredUsernameKey,
 	}, nil
 }
 
@@ -156,6 +160,7 @@ type oidcConnector struct {
 	getUserInfo               bool
 	userIDKey                 string
 	userNameKey               string
+	preferredUsernameKey      string
 }
 
 func (c *oidcConnector) Close() error {
@@ -286,6 +291,11 @@ func (c *oidcConnector) createIdentity(ctx context.Context, identity connector.I
 	}
 	hostedDomain, _ := claims["hd"].(string)
 
+	if c.preferredUsernameKey == "" {
+		c.preferredUsernameKey = "username"
+	}
+	username, _ := claims[c.preferredUsernameKey].(string)
+
 	if len(c.hostedDomains) > 0 {
 		found := false
 		for _, domain := range c.hostedDomains {
@@ -310,11 +320,12 @@ func (c *oidcConnector) createIdentity(ctx context.Context, identity connector.I
 	}
 
 	identity = connector.Identity{
-		UserID:        idToken.Subject,
-		Username:      name,
-		Email:         email,
-		EmailVerified: emailVerified,
-		ConnectorData: connData,
+		UserID:            idToken.Subject,
+		Username:          name,
+		PreferredUsername: username,
+		Email:             email,
+		EmailVerified:     emailVerified,
+		ConnectorData:     connData,
 	}
 
 	if c.userIDKey != "" {
