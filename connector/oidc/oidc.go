@@ -55,8 +55,8 @@ type Config struct {
 	// Configurable key which contains the user name claim
 	UserNameKey string `json:"userNameKey"`
 
-	// Configurable key which contains the username claims
-	PreferredUsernameKey string `json:"preferredUsernameKey"` // defaults to "username"
+	// Configurable key which contains the preferredusername claims
+	PreferredUsernameKey string `json:"preferredUsernameKey"`
 }
 
 // Domains that don't support basic auth. golang.org/x/oauth2 has an internal
@@ -292,9 +292,9 @@ func (c *oidcConnector) createIdentity(ctx context.Context, identity connector.I
 	hostedDomain, _ := claims["hd"].(string)
 
 	if c.preferredUsernameKey == "" {
-		c.preferredUsernameKey = "username"
+		c.preferredUsernameKey = "preferred_username"
 	}
-	username, _ := claims[c.preferredUsernameKey].(string)
+	preferredUsername, _ := claims[c.preferredUsernameKey].(string)
 
 	if len(c.hostedDomains) > 0 {
 		found := false
@@ -322,7 +322,7 @@ func (c *oidcConnector) createIdentity(ctx context.Context, identity connector.I
 	identity = connector.Identity{
 		UserID:            idToken.Subject,
 		Username:          name,
-		PreferredUsername: username,
+		PreferredUsername: preferredUsername,
 		Email:             email,
 		EmailVerified:     emailVerified,
 		ConnectorData:     connData,
