@@ -11,7 +11,7 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/concourse/dex/storage"
+	"github.com/karunchennuri/dex/storage"
 
 	"github.com/kylelemons/godebug/pretty"
 )

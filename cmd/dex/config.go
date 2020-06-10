@@ -8,13 +8,13 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/concourse/dex/pkg/log"
-	"github.com/concourse/dex/server"
-	"github.com/concourse/dex/storage"
-	"github.com/concourse/dex/storage/etcd"
-	"github.com/concourse/dex/storage/kubernetes"
-	"github.com/concourse/dex/storage/memory"
-	"github.com/concourse/dex/storage/sql"
+	"github.com/karunchennuri/dex/pkg/log"
+	"github.com/karunchennuri/dex/server"
+	"github.com/karunchennuri/dex/storage"
+	"github.com/karunchennuri/dex/storage/etcd"
+	"github.com/karunchennuri/dex/storage/kubernetes"
+	"github.com/karunchennuri/dex/storage/memory"
+	"github.com/karunchennuri/dex/storage/sql"
 )
 
 // Config is the config format for the main application.

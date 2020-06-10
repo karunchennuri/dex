@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/crypto/bcrypt"
 
-	"github.com/concourse/dex/storage"
+	"github.com/karunchennuri/dex/storage"
 )
 
 // RunTransactionTests runs a test suite aimed a verifying the transaction

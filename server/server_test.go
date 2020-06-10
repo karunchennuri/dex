@@ -28,10 +28,10 @@ import (
 	"golang.org/x/oauth2"
 	jose "gopkg.in/square/go-jose.v2"
 
-	"github.com/concourse/dex/connector"
-	"github.com/concourse/dex/connector/mock"
-	"github.com/concourse/dex/storage"
-	"github.com/concourse/dex/storage/memory"
+	"github.com/karunchennuri/dex/connector"
+	"github.com/karunchennuri/dex/connector/mock"
+	"github.com/karunchennuri/dex/storage"
+	"github.com/karunchennuri/dex/storage/memory"
 )
 
 func mustLoad(s string) *rsa.PrivateKey {

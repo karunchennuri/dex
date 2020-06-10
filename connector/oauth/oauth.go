@@ -14,8 +14,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/concourse/dex/connector"
-	"github.com/concourse/dex/pkg/log"
+	"github.com/karunchennuri/dex/connector"
+	"github.com/karunchennuri/dex/pkg/log"
 	"golang.org/x/oauth2"
 )
 

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/concourse/dex/storage"
+	"github.com/karunchennuri/dex/storage"
 )
 
 // TODO(ericchiang): The update, insert, and select methods queries are all

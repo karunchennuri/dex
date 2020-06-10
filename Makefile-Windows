@@ -1,0 +1,22 @@
++++++++++++++++++++
+Run this on Chocolatey
++++++++++++++++++++
+
+Create "bin" directory
+
+C:\Users\KChennu1\workspace\src\github.com\dexidp\dex (master -> origin)
+λ git rev-parse HEAD
+
+C:\Users\KChennu1\workspace\src\github.com\dexidp\dex (master -> origin)
+λ go build -o bin\dex.exe -v -ldflags "-w -X %REPO_PATH%/version.Version=dcbe94f28c882227900fe6cfdc65acdf505f19c6" github.com/karunchennuri/dex/cmd/dex
+
+C:\Users\KChennu1\workspace\src\github.com\dexidp\dex (master -> origin)
+λ go build -o bin\example-app.exe -v -ldflags "-w -X %REPO_PATH%/version.Version=dcbe94f28c882227900fe6cfdc65acdf505f19c6" github.com/karunchennuri/dex/cmd/example-app
+
+C:\Users\KChennu1\workspace\src\github.com\dexidp\dex (master -> origin)
+λ go build -o bin\example-azuread-app.exe -v -ldflags "-w -X %REPO_PATH%/version.Version=dcbe94f28c882227900fe6cfdc65acdf505f19c6" github.com/karunchennuri/dex/cmd/example-azuread-app
+
+C:\Users\KChennu1\workspace\src\github.com\dexidp\dex (master -> origin)
+λ go build -o bin\grpc-client.exe -v -ldflags "-w -X %REPO_PATH%/version.Version=dcbe94f28c882227900fe6cfdc65acdf505f19c6" github.com/karunchennuri/dex/examples/grpc-client
+
+

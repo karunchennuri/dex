@@ -12,8 +12,8 @@ import (
 
 	"gopkg.in/ldap.v2"
 
-	"github.com/concourse/dex/connector"
-	"github.com/concourse/dex/pkg/log"
+	"github.com/karunchennuri/dex/connector"
+	"github.com/karunchennuri/dex/pkg/log"
 )
 
 // Config holds the configuration parameters for the LDAP connector. The LDAP

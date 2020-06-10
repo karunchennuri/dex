@@ -10,11 +10,11 @@ import (
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 
-	"github.com/concourse/dex/api"
-	"github.com/concourse/dex/pkg/log"
-	"github.com/concourse/dex/server/internal"
-	"github.com/concourse/dex/storage"
-	"github.com/concourse/dex/storage/memory"
+	"github.com/karunchennuri/dex/api"
+	"github.com/karunchennuri/dex/pkg/log"
+	"github.com/karunchennuri/dex/server/internal"
+	"github.com/karunchennuri/dex/storage"
+	"github.com/karunchennuri/dex/storage/memory"
 )
 
 // apiClient is a test gRPC client. When constructed, it runs a server in

@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/concourse/dex/version"
+	"github.com/karunchennuri/dex/version"
 )
 
 func commandVersion() *cobra.Command {

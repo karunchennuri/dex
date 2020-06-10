@@ -19,8 +19,8 @@ import (
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/github"
 
-	"github.com/concourse/dex/connector"
-	"github.com/concourse/dex/pkg/log"
+	"github.com/karunchennuri/dex/connector"
+	"github.com/karunchennuri/dex/pkg/log"
 )
 
 const (

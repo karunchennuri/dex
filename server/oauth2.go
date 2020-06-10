@@ -21,9 +21,9 @@ import (
 
 	jose "gopkg.in/square/go-jose.v2"
 
-	"github.com/concourse/dex/connector"
-	"github.com/concourse/dex/server/internal"
-	"github.com/concourse/dex/storage"
+	"github.com/karunchennuri/dex/connector"
+	"github.com/karunchennuri/dex/server/internal"
+	"github.com/karunchennuri/dex/storage"
 )
 
 // TODO(ericchiang): clean this file up and figure out more idiomatic error handling.
